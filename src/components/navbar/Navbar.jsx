@@ -17,8 +17,16 @@ const Navbar = () => {
                 <Link className='text-[#00E967]' href={'#about'}>Contact us</Link>
             </div>
             <div className='flex gap-4'>
-                <button className='bg-[#83FFC9] rounded-md text-[#00693B] text-sm font-medium py-[10px] px-5'>Login</button>
-                <button className='bg-[#00693B] rounded-md text-white text-sm font-medium py-[10px] px-5'>Register</button>
+                <Link href={'/login'}>
+                    <button className='bg-[#83FFC9] rounded-md text-[#00693B] text-sm font-medium py-[10px] px-5'>
+                        Login
+                    </button>
+                </Link>
+                <Link href={'/register'}>
+                    <button className='bg-[#00693B] rounded-md text-white text-sm font-medium py-[10px] px-5'>
+                        Register
+                    </button>
+                </Link>
             </div>
         </div>
     )
