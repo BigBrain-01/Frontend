@@ -4,8 +4,9 @@ import Navbar from '@/components/navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { usePathname } from 'next/navigation'
+import { SessionProvider } from "next-auth/react"
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,14 +14,16 @@ export const metadata = {
 }
 
 
-export default function RootLayout({ children }) {
+export default function RootLayout({children}) {
   const pathname = usePathname()
   const isNav = pathname.startsWith('/login') || pathname.startsWith('/register')
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {!isNav && <Navbar />}
-        {children}
+      <body>
+        <SessionProvider>
+          {!isNav && <Navbar />}
+          {children}
+        </SessionProvider>
       </body>
     </html>
   )
