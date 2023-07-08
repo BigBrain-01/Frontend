@@ -19,7 +19,7 @@ export default function RootLayout({children}) {
   const isNav = pathname.startsWith('/login') || pathname.startsWith('/register')
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <SessionProvider>
           {!isNav && <Navbar />}
           {children}
