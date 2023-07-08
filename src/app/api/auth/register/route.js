@@ -8,8 +8,7 @@ export const POST = async(request) =>{
         await connect()
         const {email, fullname,password} = await request.json()
         console.log(email,fullname,password)
-        const salt = bcrpyt.genSaltSync(10)
-        const hash = bcrpyt.hashSync(password,salt)
+        const hash = await bcrpyt.hash(password,5)
         const newUser = new User({
             email:email,
             fullname:fullname,
