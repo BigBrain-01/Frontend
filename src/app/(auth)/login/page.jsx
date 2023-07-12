@@ -9,7 +9,7 @@ const login = () => {
   const [show, setShow] = useState(true);
   return (
     <div className='flex '>
-      <div className='w-[450px] h-[100vh] bg-[url(/image.png)] bg-cover bg-center bg-no-repeat '></div>
+      <div className='w-[450px] h-[100vh] bg-[url("/image.png")] bg-cover bg-center bg-no-repeat '></div>
       <div className='w-[70%] items-center justify-center flex flex-col gap-3'>
         <div className='flex w-full h-[72px] font-poppins gap-3 justify-center'>
           <h1 className='text-4xl font-semibold text-[#043133] leading-normal'>Welcome To</h1>
