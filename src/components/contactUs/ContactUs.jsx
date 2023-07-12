@@ -51,7 +51,7 @@ const ContactUs = () => {
                 </div>
                 {/* right */}
                 <div className='flex flex-1 relative items-center'>
-                    <div className='w-[70%] h-[90%] bg-[url("/map.svg")] bg-cover bg-right bg-no-repeat z-10'></div>
+                    <div className='w-[70%] h-[75vh] bg-[url("/map.svg")] bg-cover bg-right bg-no-repeat z-10'></div>
                     <div className='absolute h-[90vh] w-[50%] top-0 right-0 bg-[#031082] rounded-tr-[20px] rounded-br-[20px]'></div>
                 </div>
             </div>
