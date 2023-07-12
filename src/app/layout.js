@@ -1,12 +1,6 @@
-'use client'
-
-import Navbar from '@/components/navbar/Navbar'
 import './globals.css'
-import { Inter } from 'next/font/google'
-import { usePathname } from 'next/navigation'
-import { SessionProvider } from "next-auth/react"
+import AuthProvider from '@/components/AuthProvider/AuthProvider'
 
-// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,15 +9,12 @@ export const metadata = {
 
 
 export default function RootLayout({children}) {
-  const pathname = usePathname()
-  const isNav = pathname.startsWith('/login') || pathname.startsWith('/register')
   return (
-    <html lang="en">
-      <body>
-        <SessionProvider>
-          {!isNav && <Navbar />}
+    <html lang="en" className='scroll-smooth'>
+      <body suppressHydrationWarning={true}>
+        <AuthProvider>
           {children}
-        </SessionProvider>
+        </AuthProvider>
       </body>
     </html>
   )

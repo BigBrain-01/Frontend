@@ -5,11 +5,51 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
-
+import validator from 'validator'
+import { Alert } from '@mui/material'
 const Register = () => {
     const [seepassword, setSeePassword] = useState(false)
-    const handleSubmit = () => {
-
+    const [formData, setFormData] = useState({
+        username: "",
+        fullname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        emailError: false,
+        passwordError: false,
+        confirmPasswordError: false
+    })
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const isEmail = validator.isEmail(formData.email)
+            const isStrongPassword = validator.isStrongPassword(formData.password, {
+                minLength: 8,
+                minLowercase: 1,
+                minNumbers: 1,
+                minSymbols: 1,
+                minUppercase: 1,
+            })
+            const isConfirm = formData.password === formData.confirmPassword
+            if (isEmail && isStrongPassword && isConfirm) {
+                setFormData({ ...formData, emailError: false, passwordError: false })
+                const res = await fetch("/api/auth/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData),
+                    cache: 'no-store'
+                })
+                const data = await res.json()
+                console.log(data)
+            } else {
+                if (!isEmail) setFormData({ ...formData, emailError: true })
+                if (!isStrongPassword) setFormData({ ...formData, passwordError: true })
+            }
+        } catch (err) {
+            console.log(err)
+        }
     }
     return (
         <div className='flex'>
@@ -36,9 +76,10 @@ const Register = () => {
                         <div className='relative'>
                             <input type={seepassword ? "text" : "password"} placeholder='Enter you Password' className='px-6 py-3 w-[100%] placeholder:text-[#838383] placeholder:leading-normal bg-[#EFF0F2]' style={{ outline: 'none', border: 'none'}}/>
                             <div onClick={() => setSeePassword(!seepassword)}>
-                                {seepassword ? <Visibility sx={{ color: "#4D5959" }} className='absolute cursor-pointer top-3 right-5' /> :
-                                    <VisibilityOff sx={{ color: "#4D5959" }} className='absolute cursor-pointer top-3 right-5' />}
+                                {seepassword ? <Visibility fontSize='small' sx={{ color: "#4D5959" }} className='absolute cursor-pointer top-3 right-5' /> :
+                                    <VisibilityOff fontSize='small' sx={{ color: "#4D5959" }} className='absolute cursor-pointer top-3 right-5' />}
                             </div>
+                            {formData.passwordError && <span className="text-red-500 text-sm">Please choose a strong password</span>}
                         </div>
                         <p className='h-[20px] text-green-500 text-[15px]'>&#10003;</p>
                     </div>

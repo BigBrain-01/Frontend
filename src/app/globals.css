@@ -13,5 +13,9 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
+
+/* .MuiInputLabel-root {
+    font-size: 13px !important;
+} */

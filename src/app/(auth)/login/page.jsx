@@ -7,6 +7,19 @@ import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 const login = () => {
   const [show, setShow] = useState(true);
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    loginError: false,
+  })
+  const handleSignIn = async (e) => {
+    e.preventDefault()
+    if (formData.email !== "" && formData.password !== "")
+      signIn("credentials", formData)
+    else {
+      console.log("Incomplete credentials!")
+    }
+  }
   return (
     <div className='flex '>
       <div className='w-[50%] h-[100vh] bg-[url(/image.jpg)] bg-cover bg-center bg-no-repeat'></div>
@@ -45,9 +58,8 @@ const login = () => {
             </button>
           </div>
         </div>
-
       </div>
-    </div>
+    </div >
   )
 }
 
