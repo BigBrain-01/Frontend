@@ -5,15 +5,15 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <div className='bg-[#0B0D17] flex flex-col py-[5rem] h-[500px]'>
+        <div className='bg-[#0B0D17] flex flex-col py-[5rem] h-[490px]'>
             <div className=' flex justify-center'>
-                <div className='flex gap-3'>
-                    <div className='flex flex-col w-[255px] gap-5'>
+                <div className='flex gap-[2rem]'>
+                    <div className='flex flex-col w-[265px] gap-5'>
                         <div className='flex gap-1 '>
                             <Image src={"/logo.png"} alt='logo' width={'30'} height={'22'} />
                             <h1 className='text-[20px] text-[#FFFFFF] font-inter font-semibold leading-normal'>StudyTitans</h1>
                         </div>
-                        <p className='text-[#D9DBE1] text-[14px] font-inter font-[400] leading-[24px]'>Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
+                        <p className='text-[#D9DBE1] text-[14px] font-inter font-[400] leading-[24px] '>Lorem ipsum dolor amet, consectetur adipiscing elit. Eget nisl nunc quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.</p>
                         <div className='flex gap-3'>
                             <div className='bg-[#000] rounded-full w-[30px] h-[30px]  flex items-center justify-center'>
                                 <Image src={"/Path.png"} alt='path' width={'14'} height={'14'} />
