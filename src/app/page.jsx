@@ -7,7 +7,8 @@ import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
 import KeyboardArrowLeftRoundedIcon from '@mui/icons-material/KeyboardArrowLeftRounded';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Image from 'next/image'
+import Image from 'next/image';
+import Footer from '../components/Footer'
 import { useState } from 'react';
 
 
@@ -54,10 +55,10 @@ export default function Home() {
   const [slideIndex, setSlideindex] = useState(0);
   const [showans, setShowans] = useState(false);
   const [quesid, setQuesid] = useState(null);
-  const [playid,setPlayid] = useState(null);
+  const [playid, setPlayid] = useState(null);
 
   const handleSlide = (direction) => {
-    if (direction === "left" ) {
+    if (direction === "left") {
       setSlideindex(slideIndex > 0 ? slideIndex - 1 : slideIndex)
       console.log("clickedR")
     } else {
@@ -156,7 +157,7 @@ export default function Home() {
         <div className='w-full overflow-hidden'>
           <div className='flex whitespace-nowrap gap-7 items-center transition duration-[1000] ease' style={{ transform: `translate3d(${-slideIndex * 100}%, 0, 0)` }}>
             {data.map((value, i) => (
-              <Paper elevation={1} sx={{ display: 'inline-block', gap: '5px', flexDirection: 'column' }} className={`min-w-[400px] `}>
+              <Paper elevation={1} key={i} sx={{ display: 'inline-block', gap: '5px', flexDirection: 'column' }} className={`min-w-[400px] `}>
                 <div className='flex items-center justify-center'>
                   <Image src={value.img} alt='' width={'383'} height={'237'}></Image>
                 </div>
@@ -165,7 +166,7 @@ export default function Home() {
                     <span className='text-[20px] text-[#000000] font-bold font-inter'>{value.class}</span>
                     <span className='text-[14px] text-[#696969] font-medium '>{value.author}</span>
                   </div>
-                  <div onClick={() => { setPlay(!play);setPlayid(value.id) }}>{!(play && (value.id === playid)) ? <PlayArrowIcon sx={{ width: '49px', height: '49px ', cursor: 'pointer', color: '#EE0000' }} /> : <PauseIcon color='error' sx={{ width: '45px', height: '45px ', cursor: 'pointer' }} />}</div>
+                  <div onClick={() => { setPlay(!play); setPlayid(value.id) }}>{!(play && (value.id === playid)) ? <PlayArrowIcon sx={{ width: '49px', height: '49px ', cursor: 'pointer', color: '#EE0000' }} /> : <PauseIcon color='error' sx={{ width: '45px', height: '45px ', cursor: 'pointer' }} />}</div>
                 </div>
               </Paper>
             ))}
@@ -217,7 +218,7 @@ export default function Home() {
           </div>
           <div className='flex justify-evenly'>
             {plan.map((value, i) => (
-              <Paper elevation={3} className='flex flex-col items-center w-[300px]  py-1 px-1 gap-3' sx={{ borderRadius: "12px" }}>
+              <Paper elevation={3} key={i} className='flex flex-col items-center w-[300px]  py-1 px-1 gap-3' sx={{ borderRadius: "12px" }}>
                 <Image src={value.img} width={'300'} height={'165'} />
                 <h1 className='text-[30px] font-inter font-bold text-[#FFD600]'>{value.class}</h1>
                 <span className='text-[30px] text-[#000000] font-inter font-bold leading-normal'>$50 USD</span>
@@ -238,25 +239,26 @@ export default function Home() {
         </div>
       </div>
       {/* questions */}
-      <div className='flex flex-col items-center gap-3'>
+      <div className='flex flex-col items-center gap-3 h-max pb-16 '>
         <div className='mb-10'>
           <h1 className='text-[43px] text-[#000000] font-inter leading-normal font-bold '>Frequently Asked Questions</h1>
         </div>
-        {question.map((value, i) => (
-          <div className='flex flex-col w-[1182px] ' key={i}>
-            <Paper className='flex justify-between  p-3 items-center'>
-              <span className='text-[20px] font-inter font-bold text-[#000000] leading-normal px-5'>{value.question}</span>
-              <div onClick={() => { setShowans(!showans); setQuesid(value.id) }}>{!(showans && (value.id === quesid)) ? <KeyboardArrowDownIcon sx={{ color: '#000000', cursor: 'pointer' }} /> : <KeyboardArrowUpIcon sx={{ color: '#000000', cursor: 'pointer' }} />}</div>
-            </Paper>
-            {showans && (value.id === quesid) &&
-              <div className='bg-[#ECECEC] p-3 px-8'>
-                <span className='text-[18px] text-[#757575] font-inter font-semibold leading-normal '>{value.ans}</span>
-              </div>
-            }
-          </div>
-        ))}
+        <div className='shadow-md'>
+          {question.map((value, i) => (
+            <div className='flex flex-col w-[1182px] ' key={i}>
+              <Paper elevation={0} className='flex justify-between  p-3 items-center'>
+                <span className='text-[18px] font-inter font-bold text-[#000000] leading-normal px-5'>{value.question}</span>
+                <div onClick={() => { setShowans(!showans); setQuesid(value.id) }}>{!(showans && (value.id === quesid)) ? <KeyboardArrowDownIcon sx={{ color: '#000000', cursor: 'pointer' }} /> : <KeyboardArrowUpIcon sx={{ color: '#000000', cursor: 'pointer' }} />}</div>
+              </Paper>
+              {showans && (value.id === quesid) &&
+                <div className='bg-[#ECECEC] p-3 px-8 '>
+                  <span className='text-[16px] text-[#757575] font-inter font-semibold leading-normal '>{value.ans}</span>
+                </div>
+              }
+            </div>
+          ))}
+        </div>
       </div>
-
     </div>
   )
 }
