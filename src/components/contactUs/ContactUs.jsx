@@ -9,8 +9,8 @@ const ContactUs = () => {
         <div className='flex  bg-[#FAF8F4] justify-center'>
             <div className='flex bg-white shadow-lg rounded-[40px] w-full m-5 h-[90vh] pl-10'>
                 {/* left */}
-                <div className='flex-1 flex justify-end'>
-                    <div className='flex flex-col justify-center gap-2.5 w-[70%]'>
+                <div className='flex-1 flex justify-center'>
+                    <div className='flex flex-col justify-center gap-2.5 w-[75%]'>
                         <h1 className='font-bold text-4xl'>Get in <span className='text-[#00C26D]'>Touch</span></h1>
                         <p className='text-xs font-semibold'>Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.</p>
                         <form className='flex flex-col gap-4' onSubmit={() => { }}>
@@ -50,10 +50,9 @@ const ContactUs = () => {
                     </div>
                 </div>
                 {/* right */}
-                <div className='flex flex-1 relative'>
-                    <div className='w-1/2'></div>
-                    <div className='absolute w-[450px] h-[420px] top-12 right-2 bg-[url("/map.svg")] bg-contain bg-no-repeat'></div>
-                    <div className='w-1/2 bg-[#031082] rounded-tr-[20px] rounded-br-[20px]'></div>
+                <div className='flex flex-1 relative items-center'>
+                    <div className='w-[70%] h-[90%] bg-[url("/map.svg")] bg-cover bg-right bg-no-repeat z-10'></div>
+                    <div className='absolute h-[90vh] w-[50%] top-0 right-0 bg-[#031082] rounded-tr-[20px] rounded-br-[20px]'></div>
                 </div>
             </div>
         </div>
