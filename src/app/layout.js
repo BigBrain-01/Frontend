@@ -12,16 +12,13 @@ export const metadata = {
 }
 
 
-export default function RootLayout({children}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" className='scroll-smooth'>
       <body suppressHydrationWarning={true}>
         <AuthProvider>
-    <SessionProvider>
           {children}
-          <Footer/>
-        </SessionProvider>
-
+          <Footer />
         </AuthProvider>
 
       </body>
