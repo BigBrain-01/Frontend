@@ -17,6 +17,7 @@ export default function RootLayout({children}) {
     <html lang="en" className='scroll-smooth'>
       <body suppressHydrationWarning={true}>
         <AuthProvider>
+    <SessionProvider>
           {children}
           <Footer/>
         </SessionProvider>
