@@ -4,7 +4,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <div className='shadow-[0px_1px_0px_0px_#E5E9F2] h-14 flex items-center justify-between px-32 font-inter'>
+        <div className='shadow-[0px_1px_0px_0px_#E5E9F2] h-14 flex items-center justify-between px-32 font-inter z-10'>
             <div className='flex'>
                 <Image src={'/logo.png'} alt="" width={30} height={22} />
                 <Link className='text-[18px] flex font-semibold leading-3 items-center' href={'/'}><span className='text-[#2F3192]'>Study</span>Titans</Link>
@@ -14,7 +14,7 @@ const Navbar = () => {
                 <Link href={'#about'}>Features</Link>
                 <Link href={'#about'}>Pricing</Link>
                 <Link href={'#about'}>Videos</Link>
-                <Link className='text-[#00E967]' href={'#about'}>Contact us</Link>
+                <Link className='text-[#00E967]' href={'/contact'}>Contact us</Link>
             </div>
             <div className='flex gap-4'>
                 <Link href={'/login'}>
