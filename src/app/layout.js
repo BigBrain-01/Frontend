@@ -1,5 +1,9 @@
 import './globals.css'
+import { usePathname } from 'next/navigation'
+import { SessionProvider } from "next-auth/react"
+import Footer from '@/components/Footer'
 import AuthProvider from '@/components/AuthProvider/AuthProvider'
+
 
 
 export const metadata = {
@@ -13,8 +17,13 @@ export default function RootLayout({children}) {
     <html lang="en" className='scroll-smooth'>
       <body suppressHydrationWarning={true}>
         <AuthProvider>
+        <SessionProvider>
           {children}
+          <Footer/>
+        </SessionProvider>
+
         </AuthProvider>
+
       </body>
     </html>
   )
