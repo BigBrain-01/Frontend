@@ -14,7 +14,7 @@ const Navbar = () => {
                 <Link href={'#about'}>Features</Link>
                 <Link href={'#about'}>Pricing</Link>
                 <Link href={'#about'}>Videos</Link>
-                <Link className='text-[#00E967]' href={'#about'}>Contact us</Link>
+                <Link className='text-[#00E967]' href={'/contact'}>Contact us</Link>
             </div>
             <div className='flex gap-4'>
                 <Link href={'/login'}>
