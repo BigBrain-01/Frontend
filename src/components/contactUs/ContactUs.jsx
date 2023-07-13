@@ -19,8 +19,8 @@ const ContactUs = () => {
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} size='small' type='text' label='Phone Number' />
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} size='small' type='text' label='Message' />
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} select size='small' label='Select on option' value={value}>
-                                <MenuItem sx={{ fontSize: '14px' }} value="demo">Demo</MenuItem>
-                                <MenuItem sx={{ fontSize: '14px' }} value="demo">Demo</MenuItem>
+                                <MenuItem sx={{ fontSize: '14px' }} onClick={(e)=>setValue(e.target.value)} value="demo">Demo</MenuItem>
+                                <MenuItem sx={{ fontSize: '14px' }} onClick={(e)=>setValue(e.target.value)} value="demo">Demo</MenuItem>
                             </TextField >
                             <button type='submit' className='bg-[#00C26D] text-white w-full text-center py-2'>SEND</button>
                             <div className='flex gap-5'>
