@@ -6,8 +6,8 @@ import Link from 'next/link'
 const ContactUs = () => {
     const [value, setValue] = useState()
     return (
-        <div className='flex  bg-[#FAF8F4] justify-center'>
-            <div className='flex bg-white shadow-lg rounded-[40px] w-full m-5 h-[90vh] pl-10'>
+        <div className='flex bg-[#FAF8F4] justify-center'>
+            <div className='flex bg-white rounded-[40px] w-full m-5 mb-0 h-[90vh] pl-10' style={{boxShadow:'0px 141px 200px -80px rgba(25, 58, 75, 0.30)'}}>
                 {/* left */}
                 <div className='flex-1 flex justify-center'>
                     <div className='flex flex-col justify-center gap-2.5 w-[75%]'>
@@ -19,8 +19,8 @@ const ContactUs = () => {
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} size='small' type='text' label='Phone Number' />
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} size='small' type='text' label='Message' />
                             <TextField InputProps={{ style: { fontSize: '14px' } }} InputLabelProps={{ style: { fontSize: '14px' } }} select size='small' label='Select on option' value={value}>
-                                <MenuItem sx={{ fontSize: '14px' }} value="demo">Demo</MenuItem>
-                                <MenuItem sx={{ fontSize: '14px' }} value="demo">Demo</MenuItem>
+                                <MenuItem sx={{ fontSize: '14px' }} onClick={(e)=>setValue(e.target.value)} value="demo">Demo</MenuItem>
+                                <MenuItem sx={{ fontSize: '14px' }} onClick={(e)=>setValue(e.target.value)} value="demo">Demo</MenuItem>
                             </TextField >
                             <button type='submit' className='bg-[#00C26D] text-white w-full text-center py-2'>SEND</button>
                             <div className='flex gap-5'>
