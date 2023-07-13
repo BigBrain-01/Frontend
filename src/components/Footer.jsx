@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 
-
 const Footer = () => {
     return (
         <div className='bg-[#0B0D17] flex flex-col py-[5rem] h-[490px]'>
