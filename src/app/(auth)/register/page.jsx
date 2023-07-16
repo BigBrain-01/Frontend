@@ -64,12 +64,12 @@ const Register = () => {
                     <div className='flex flex-col w-full pb-3'>
                         <span className='font-[500] text-[#4D5959] leading-[30px] pb-0.2'>Full Name</span>
                         <input type="text" placeholder='John Doe' className='w-full bg-[#EFF0F2] px-6 py-3  placeholder:text-[#838383] placeholder:leading-normal' style={{ outline: 'none', border: 'none' }}/>
-                        <p className='h-[20px] text-red-500 text-[15px]'>&#9888; name not valid</p>
+                        {/* <p className='h-[20px] text-red-500 text-[15px]'>{}</p> */}
                     </div>
                     <div className='flex flex-col w-full pb-3'>
                         <span className='font-[500] text-[#4D5959] leading-[30px] pb-0.2'>Email</span>
                         <input type="text" placeholder='Enter your Email here' className=' w-full bg-[#EFF0F2] px-6 py-3  placeholder:text-[#838383] placeholder:leading-normal' style={{ outline: 'none', border: 'none' }}/>
-                        <p className='h-[20px] text-green-500 text-[15px]'>&#10003;</p>
+                        <p className='h-[20px] text-green-500 text-[15px]'>{formData.emailError}</p>
                     </div>
                     <div className='flex flex-col w-full pb-3'>
                         <span className='font-[500] text-[#4D5959] leading-[30px] pb-0.2'>Password</span>
@@ -81,12 +81,12 @@ const Register = () => {
                             </div>
                             {formData.passwordError && <span className="text-red-500 text-sm">Please choose a strong password</span>}
                         </div>
-                        <p className='h-[20px] text-green-500 text-[15px]'>&#10003;</p>
+                        <p className='h-[20px] text-green-500 text-[15px]'>{formData.passwordError}</p>
                     </div>
                     <div className='flex flex-col w-full pb-7'>
                         <span className='font-[500] text-[#4D5959] leading-[30px] pb-0.2'>Confirm Password</span>
                         <input type={seepassword ? "text" : "password"} placeholder='Enter you Password' className='px-6 py-3 w-[100%] placeholder:text-[#838383] placeholder:leading-normal bg-[#EFF0F2]' style={{ outline: 'none', border: 'none'}}/>
-                        <p className='h-[20px] text-green-500 text-[15px]'>&#10003;</p>
+                        <p className='h-[20px] text-green-500 text-[15px]'>{formData.confirmPasswordError}</p>
                     </div>
                     <div className='flex flex-col items-center pb-10'>
                         <button className='w-max px-24 py-2 bg-[#007074] mb-4 text-[#FFFFFF] text-[18px] font-medium  leading-normal' >Register</button>
