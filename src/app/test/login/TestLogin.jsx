@@ -2,7 +2,6 @@ import React from 'react'
 import { VisibilityOff } from '@mui/icons-material'
 import { TextField } from '@mui/material'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const TestLogin = () => {
     return (
@@ -25,9 +24,7 @@ const TestLogin = () => {
                                 endAdornment: <VisibilityOff sx={{ color: '#00693B', width: '20px' }} />
                             }} />
                         </div>
-                        <Link href={'/test/intro/{123}'}>
-                            <button variant='filled' className='bg-[#00693B17] border border-[#00693B] rounded-md py-2 px-12 text-[#00693B]'>Take Test</button>
-                        </Link>
+                        <button variant='filled' className='bg-[#00693B17] border border-[#00693B] rounded-md py-2 px-12 text-[#00693B]'>Take Test</button>
                     </div>
                 </div>
             </div>
