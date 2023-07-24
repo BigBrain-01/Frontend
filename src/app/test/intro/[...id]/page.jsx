@@ -1,6 +1,7 @@
 import moment from 'moment'
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -41,7 +42,9 @@ const page = () => {
         </div>
         <div className='flex justify-end gap-2 mt-[6rem] mr-10'>
           <button className='bg-[#83FFC969] rounded-md text-[#00693B] py-2 px-8'>Cancel</button>
-          <button className='bg-[#00693B] rounded-md text-white py-2 px-4'>Agree and Proceed</button>
+          <Link href={'/test/testpaper/123'}>
+            <button className='bg-[#00693B] rounded-md text-white py-2 px-4'>Agree and Proceed</button>
+          </Link>
         </div>
       </div>
     </div>
