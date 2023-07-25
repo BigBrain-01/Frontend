@@ -37,11 +37,13 @@ const login = () => {
           <div className='flex flex-col w-full pb-7'>
             <span className='font-[500] text-[#4D5959] leading-[30px] pb-0.2'>Password</span>
             <div className='relative'>
-              <input type={show ? "password" : "text"} placeholder="Enter your password" className='px-6 py-3 w-[100%] placeholder:text-[#838383] placeholder:leading-normal bg-[#EFF0F2]' style={{ outline: 'none', border: 'none'}} />
-              <div className='cursor-pointer absolute top-2.5 right-4' onClick={()=>{setShow(!show)}}>{!show?<Visibility sx={{color:'#4D5959'}}/>:<VisibilityOff sx={{color:'#4D5959'}}/>}</div>
+              <input type={show ? "password" : "text"} placeholder="Enter your password" className='px-6 py-3 w-[100%] placeholder:text-[#838383] placeholder:leading-normal bg-[#EFF0F2]' style={{ outline: 'none', border: 'none' }} />
+              <div className='cursor-pointer absolute top-2.5 right-4' onClick={() => { setShow(!show) }}>{!show ? <Visibility sx={{ color: '#4D5959' }} /> : <VisibilityOff sx={{ color: '#4D5959' }} />}</div>
             </div>
-            <p className='h-[20px] text-red-500 text-[15px]'>&#9888; name not valid</p>
-            <div className='text-[#317B74] w-full font-[500] text-right pt-1'>forget Password?</div>
+            <div className='flex w-full'>
+              <p className='h-[20px] text-red-500 text-[15px] w-full'>&#9888; name not valid</p>
+              <div className='text-[#317B74] w-full font-[500] text-right cursor-pointer'>Forget Password?</div>
+            </div>
           </div>
           <div className='flex flex-col items-center pb-12'>
             <button className='w-max px-24 py-2 bg-[#007074] mb-4 text-[#FFFFFF] text-[18px] font-medium  leading-normal' >Login</button>
