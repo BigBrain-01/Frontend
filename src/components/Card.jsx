@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 const Card = () => {
   return (
-    <div className="flex flex-col w-60  bg-white border rounded-lg ">
+    <div className="flex flex-col w-[240px] bg-white border rounded-lg ">
       <div className="w-full">
         <Image src="/image 2.png" alt="" quality={100} className="object-cover" width={240} height={240} />
       </div>
