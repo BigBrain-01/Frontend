@@ -90,16 +90,16 @@ const VideoPlayer = ({ src }) => {
   };
 
   return (
-    <div className="flex w-full justify-end p-5 " >
-      <div className={`w-full items-center flex justify-end`}>
-        <div className="w-[50%] relative" onMouseEnter={()=>setControlHover(true)} onMouseLeave={()=>setControlHover(false)}>
+    <div className="flex w-full justify-end  " >
+      <div className={`w-full items-center flex `}>
+        <div className="w-[90%] relative" onMouseEnter={()=>setControlHover(true)} onMouseLeave={()=>setControlHover(false)}>
           <video
             src={src}
             ref={playerRef}
             controls={false}
             width={"100%"}
             height={"100%"}
-            className="-z-10 cursor-pointer"
+            className="-z-10 cursor-pointer aspect-auto"
             onLoadedData={(e) => console.log(e)}
             onClick={handlePlay}
             onTimeUpdate={handleDuration}
