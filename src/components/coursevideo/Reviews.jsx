@@ -54,16 +54,16 @@ const Reviews = () => {
 
 
     return (
-        <div className='flex flex-col gap-10 w-[90%]'>
+        <div className='flex flex-col gap-10 w-[90%] '>
             <h1 className='text-[28px] text-[rgb(33,33,33)] font-semibold font-poppins leading-normal'>Ratings & Reviews</h1>
             <div className='pl-8 flex justify-between'>
                 <div className='flex gap-14 items-center'>
                     <div className='flex flex-col gap-1'>
-                        <div className='flex items-center gap-2'>
-                            <span className='text-[45px] text-[#212121] font-semibold leading-[52px]'>4.4</span>
-                            <Image src={'/Star.png'} alt='star' width={'32'} height={'32'} />
+                        <div className='flex items-center gap-2 justify-center'>
+                            <span className='text-[35px] text-[#212121] font-semibold leading-[52px]'>4.4</span>
+                            <Image src={'/Star.png'} alt='star' width={'25'} height={'25'} />
                         </div>
-                        <span className='w-[130px] text-[#878792] text-[16px] font-semibold leading-[24px] text-center'>2,078 Ratings & 270 Reviews</span>
+                        <span className='w-[110px] text-[#878792] text-[14px] font-semibold leading-[24px] text-center'>2,078 Ratings & 270 Reviews</span>
                     </div>
                     <div className='flex flex-col gap-1'>
                         <div className='flex gap-2'>
@@ -124,20 +124,20 @@ const Reviews = () => {
                             <div className='flex gap-3 items-center'>
                                 <Avatar src={value.dp} alt='dp' sx={{ width: '56px', height: '56px' }}>G</Avatar>
                                 <div className='flex flex-col '>
-                                    <span className='text-[18px] text-[#18191F] font-poppins font-bold leading-[28px]'>{value.name}</span>
-                                    <Rating readOnly value={value.rating} />
+                                    <span className='text-[16px] text-[#18191F] font-poppins font-bold leading-[28px]'>{value.name}</span>
+                                    <Rating readOnly value={value.rating}  />
                                 </div>
                             </div>
                             <div className='flex gap-3 pl-20'>
                                 <div onClick={() => { setLike(!like); setDislike(false) }} className='flex gap-1 items-center cursor-pointer'>{!like ? <ThumbUpOutlinedIcon /> : <ThumbUpIcon color='primary' />}
-                                    <span className='text-[18px]'>{value.like}</span>
+                                    <span className='text-[16px]'>{value.like}</span>
                                 </div>
                                 <div onClick={() => { setDislike(!dislike); setLike(false) }} className='flex gap-1 items-center cursor-pointer '>{!dislike ? <ThumbDownOutlinedIcon /> : <ThumbDownIcon color='primary' />}
-                                    <span className='text-[18px] mb-[5px]'>{value.dislike}</span>
+                                    <span className='text-[16px] mb-[6px]'>{value.dislike}</span>
                                 </div>
                             </div>
                         </div>
-                        <div className='text-[18px] text-[#18191F] font-[400] font-poppins leading-[32px] w-[530px]'>
+                        <div className='text-[16px] text-[#18191F] font-[400] font-poppins leading-[32px] w-[530px]'>
                             <p>{value.review}</p>
                         </div>
                     </div>
