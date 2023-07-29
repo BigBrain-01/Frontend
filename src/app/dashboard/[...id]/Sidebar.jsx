@@ -28,7 +28,7 @@ const Sidebar = () => {
     };
     return (
         <div>
-            <Paper elevation={3} className=' h-[100vh] overflow-hidden'>
+            <div elevation={3} className=' h-[100vh] shadow-md overflow-hidden fixed w-[330px]'>
                 <div className=' bg-[#010033] p-3 gap-[5rem] flex flex-col pb-14'>
                     <div className='flex items-center gap-4'>
                         <div><KeyboardArrowLeftRoundedIcon sx={{ width: '34px', height: '34px', color: 'white',cursor:'pointer' }} /></div>
@@ -70,7 +70,7 @@ const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-            </Paper>
+            </div>
         </div>
     )
 }
