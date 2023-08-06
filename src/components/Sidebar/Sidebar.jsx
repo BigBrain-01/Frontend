@@ -1,10 +1,7 @@
 "use client";
-
 import Image from "next/image";
 import React from "react";
-
-
-
+import Link from "next/link";
 
 const Sidebar = () => {
   return (
@@ -17,7 +14,7 @@ const Sidebar = () => {
         <div className="flex gap-2 items-center text-[#00693B] font-bold">
           <Image src="/classroom.svg" alt="" quality={100} width={20} height={20} />
           <h1>Classroom</h1>
-          
+
         </div>
         <div className="flex gap-2 items-center">
           <Image src="/courses.svg" alt="" quality={100} width={20} height={24} />
@@ -35,13 +32,15 @@ const Sidebar = () => {
           <Image src="/billing.svg" alt="" quality={100} width={20} height={24} />
           <h1>Billing</h1>
         </div>
-        <div className="flex gap-2 items-center">
-          <Image src="/settings.svg" alt="" quality={100} width={20} height={24} />
-          <h1>Settings</h1>
-        </div>
+        <Link href={'../../app/profile'}>
+          <div className="flex gap-2 items-center">
+            <Image src="/settings.svg" alt="" quality={100} width={20} height={24} />
+            <h1>Settings</h1>
+          </div>
+        </Link>
       </div>
     </div>
-    
+
   );
 };
 

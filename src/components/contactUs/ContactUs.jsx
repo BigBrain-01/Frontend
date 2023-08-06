@@ -23,7 +23,7 @@ const ContactUs = () => {
                                 <MenuItem sx={{ fontSize: '14px' }} onClick={(e)=>setValue(e.target.value)} value="demo">Demo</MenuItem>
                             </TextField >
                             <button type='submit' className='bg-[#00C26D] text-white w-full text-center py-2'>SEND</button>
-                            <div className='flex gap-5'>
+                            <div className='flex gap-5 mt-5'>
                                 <div className='flex gap-2.5 items-center'>
                                     <Image src='/phone.svg' alt='' width={25} height={25} />
                                     <div className='flex flex-col text-xs font-semibold'>

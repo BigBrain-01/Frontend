@@ -24,7 +24,7 @@ const page = () => {
         <div className='w-[90%] pt-3 flex justify-between '>
           <div className='w-[694px] p-2 gap-5 flex items-center bg-[#FFF] h-[48px] rounded-md'>
             <SearchIcon sx={{ width: "24px", height: "24px", color: '#AEB6CF' }} />
-            <input type="text" placeholder='Search' style={{ border: 'none', outline: 'none' }} className='w-full placeholder:text-[#AEB6CF] placeholder:text-[14px] placeholder:font-[400]' />
+            <input type="Search" placeholder='Search' style={{ border: 'none', outline: 'none' }} className='w-full placeholder:text-[#AEB6CF] placeholder:text-[14px] placeholder:font-[400]' />
           </div>
           <div className='flex gap-5'>
             <div className='w-[48px] h-[48px] bg-[#FFF] items-center flex justify-center rounded-md'>
