@@ -15,7 +15,7 @@ const Assignments = () => {
         { id: 10,name: 'Assignment1.pdf', createdAt: 'July 29,2023',fileUrl:'/file.pdf' },
     ]
     return (
-        <div className='w-[90%] flex flex-col gap-5'>
+        <div className='w-[100%] px-10 flex flex-col gap-5'>
             <div className='flex text-[18px] justify-between font-[500] font-poppins gap-5 '>
                 <span>Name</span>
                 <span>createdAt</span>

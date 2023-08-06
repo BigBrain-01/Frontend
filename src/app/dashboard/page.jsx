@@ -1,12 +1,7 @@
 "use client";
-
-import Sidebar from "@/components/Sidebar/Sidebar";
 import React from "react";
-import SearchIcon from "@mui/icons-material/Search";
-import Image from "next/image";
-
-import moment from "moment";
 import Card from "@/components/Card";
+import Link from "next/link";
 
 const page = () => {
   // map card component here
@@ -76,53 +71,61 @@ const page = () => {
             <div className="cursor-pointer">
               <Image src="/profile pic.png" alt="" width={48} height={48}  className="rounded-full"/>
             </div>
+    <div className="flex flex-col">
+      {/* courses tab */}
+      <div className="flex flex-col mt-8  px-5 ">
+        <div className="font-semibold">Classroom for 4 & 5</div>
+        <div className="mt-5 flex justify-between relative">
+          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+            <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
+
           </div>
+          {card.map((item) => (
+            <Card
+              title={item.title}
+              image={item.image}
+              status={item.status}
+              statusColor={item.statusColor}
+              button1={item.button1}
+              button2={item.button2}
+            />
+          ))}
         </div>
-        {/* courses tab */}
-        <div className="flex flex-col mt-8  px-5 ">
-          <div className="font-semibold">Classroom for 4 & 5</div>
-          <div className="mt-5 flex justify-between ">
-            {card.map((item) => (
-              <Card
-                title={item.title}
-                image={item.image}
-                status={item.status}
-                statusColor={item.statusColor}
-                button1={item.button1}
-                button2={item.button2}
-              />
-            ))}
+      </div>
+      <div className="flex flex-col mt-8  px-5 ">
+        <div className="font-semibold">Classroom for 6 & 8</div>
+        <div className="mt-5 flex justify-between relative">
+          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+            <Link href={'/dashboard/classroom-for-6-and-8'}>See More</Link>
           </div>
+          {card.map((item) => (
+            <Card
+              title={item.title}
+              image={item.image}
+              status={item.status}
+              statusColor={item.statusColor}
+              button1={item.button1}
+              button2={item.button2}
+            />
+          ))}
         </div>
-        <div className="flex flex-col mt-8  px-5 ">
-          <div className="font-semibold">Classroom for 6 & 8</div>
-          <div className="mt-5 flex justify-between ">
-            {card.map((item) => (
-              <Card
-                title={item.title}
-                image={item.image}
-                status={item.status}
-                statusColor={item.statusColor}
-                button1={item.button1}
-                button2={item.button2}
-              />
-            ))}
+      </div>
+      <div className="flex flex-col mt-8  px-5 ">
+        <div className="font-semibold">Classroom for 9 & 10</div>
+        <div className="mt-5 flex justify-between relative">
+          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+            <Link href={'/dashboard/classroom-for-9-and-10'}>See More</Link>
           </div>
-        </div>
-        <div className="flex flex-col mt-8  px-5 ">
-          <div className="font-semibold">Classroom for 9 & 10</div>
-          <div className="mt-5 flex justify-between ">
-            {card.map((item) => (
-              <Card
-                title={item.title}
-                image={item.image}
-                status={item.status}
-                statusColor={item.statusColor}
-                button1={item.button1}
-                button2={item.button2}
-              />
-            ))}
-          </div>
+          {card.map((item) => (
+            <Card
+              title={item.title}
+              image={item.image}
+              status={item.status}
+              statusColor={item.statusColor}
+              button1={item.button1}
+              button2={item.button2}
+            />
+          ))}
         </div>
       </div>
     </div>

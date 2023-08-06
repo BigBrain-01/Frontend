@@ -7,8 +7,9 @@ import React, { useEffect, useRef, useState } from "react";
 const VideoPlayer = ({ src }) => {
   const playerRef = useRef();
   const [volumeHover, setVolumeHover] = useState(false);
-  const [controlHover,setControlHover] = useState(false)
-  const [played,setPlayed] = useState(0)
+  const [settingEffect, setSettingEffect] = useState(false)
+  const [controlHover, setControlHover] = useState(false)
+  const [played, setPlayed] = useState(0)
   const [player, setPlayer] = useState({
     playing: false,
     prevVolume: 100,
@@ -92,7 +93,7 @@ const VideoPlayer = ({ src }) => {
   return (
     <div className="flex w-full justify-end  " >
       <div className={`w-full items-center flex `}>
-        <div className="w-[90%] relative" onMouseEnter={()=>setControlHover(true)} onMouseLeave={()=>setControlHover(false)}>
+        <div className="w-[90%] relative" onMouseEnter={() => setControlHover(true)} onMouseLeave={() => setControlHover(false)}>
           <video
             src={src}
             ref={playerRef}
@@ -110,7 +111,7 @@ const VideoPlayer = ({ src }) => {
           ></video>
           {controlHover && <div className="flex flex-col px-4 w-[100%] gap-1 h-max z-100 absolute bottom-0 pb-1 left-0 right-0 bg-gradient-to-t text-white text-sm from-gray-700/80">
             <div className="w-full bg-white/40 cursor-pointer flex relative h-1">
-              <div style={{width:`${played}%`}} className={`h-1 z-2 absolute bg-black`}></div>
+              <div style={{ width: `${played}%` }} className={`h-1 z-2 absolute bg-black`}></div>
             </div>
             <div className="flex items-center justify-between ">
               <div
@@ -183,7 +184,7 @@ const VideoPlayer = ({ src }) => {
                         setPlayer({
                           ...player,
                           prevVolume: v > 0 ? v : player.prevVolume,
-                          volume:v
+                          volume: v
                         });
                       }}
                       alt=""
@@ -209,13 +210,61 @@ const VideoPlayer = ({ src }) => {
                     }
                   }
                 }} />
-                <Image
-                  src="https://img.icons8.com/ios-filled/30/ffffff/settings.png"
-                  width={20}
-                  height={20}
-                  className="cursor-pointer"
-                  alt=""
-                />
+                <div className="relative">
+                  <Image
+                    src="https://img.icons8.com/ios-filled/30/ffffff/settings.png"
+                    width={20}
+                    height={20}
+                    onClick={() => setSettingEffect(!settingEffect)} className={`${settingEffect ? "rotate-90" : "rotate-0"} cursor-pointer transition-all duration-100 ease-in-out`}
+                    alt=""
+                  />
+                  {settingEffect && <div className="absolute bg-[#363636] bottom-10 text-white p-2 flex flex-col gap-2">
+                    <div className="flex gap-2">
+                      <div>Annotations</div>
+                      <Switch color="default" size="small" />
+                    </div>
+                    <div className="flex flex-col gap-5">
+                      <div className="flex gap-2">
+                        <div>Playback Speed</div>
+                        <div>1</div>
+                      </div>
+                      <Slider
+                        sx={{
+                          width: "100%",
+                          background: "transparent",
+                          color: "white",
+                          padding: "0px",
+                          '& .MuiSlider-thumb': {
+                            width:"18px",
+                            height:"18px",
+                            '&:hover, &.Mui-focusVisible': {
+                              boxShadow: "none"
+                            },
+                            '&.Mui-active': {
+                              boxShadow: "none"
+                            }
+                          }
+                        }}
+                        className=" transition-all duration-300 ease-in-out"
+                        size="small"
+                        value={player.volume}
+                        min={0}
+                        max={100}
+                        defaultValue={100}
+                        onChange={handleVolume}
+                        onChangeCommitted={(e, v) => {
+                          setPlayer({
+                            ...player,
+                            prevVolume: v > 0 ? v : player.prevVolume,
+                            volume: v
+                          });
+                        }}
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex w-full justify-end cursor-pointer">Reset</div>
+                  </div>}
+                </div>
                 <div
                   className="w-[30px] relative h-[23px] border-4 border-white cursor-pointer"
                   onClick={() => playerRef.current.requestPictureInPicture()}

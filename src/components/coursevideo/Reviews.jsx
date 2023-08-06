@@ -53,7 +53,7 @@ const Reviews = () => {
 
 
     return (
-        <div className='flex flex-col gap-10 w-[90%] '>
+        <div className='flex flex-col gap-10 w-[100%] px-10 '>
             <h1 className='text-[28px] text-[rgb(33,33,33)] font-semibold font-poppins leading-normal'>Ratings & Reviews</h1>
             <div className='pl-8 flex justify-between'>
                 <div className='flex gap-14 items-center'>
