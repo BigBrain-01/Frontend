@@ -53,13 +53,13 @@ const page = () => {
         <div className="flex px-5 py-5 gap-5 bg-[#EFF3FD]  items-center justify-between w-full h-14">
           <div className="flex gap-5 items-center">
             <div className="flex flex-col text-xs">
-              <div className="text-lg font-semibold">
+              <div className="text-lg font-semibold truncate w-[194px]">
                 Welcome Darpan Bahadur
               </div>
               {moment().format("hh:mm a DD MMM YYYY")}
             </div>
 
-            <div className="flex  px-2  bg-white w-[400px] items-center rounded-md gap-3 h-[48px] ">
+            <div className="flex  px-2  bg-white w-[627px] items-center rounded-md gap-3 h-[48px] ">
               <SearchIcon sx={{width:"24px",height:'24px',color:"#AEB6CF",}}/>
               <input
                 className="rounded-md w-full h-8 outline-none "
@@ -70,11 +70,11 @@ const page = () => {
           </div>
           <div className="flex items-center gap-5 ">
             <div className="bg-white  cursor-pointer p-3 rounded-md">
-              <Image src="/bell.svg" alt="" width={20} height={10} />
+              <Image src="/bell.svg" alt="" width={24} height={24} />
             </div>
-            <div>Darpan Bahadur</div>
+            <div className="truncate">Darpan Bahadur</div>
             <div className="cursor-pointer">
-              <Image src="/profile pic.png" alt="" width={30} height={30}  className="rounded-full"/>
+              <Image src="/profile pic.png" alt="" width={48} height={48}  className="rounded-full"/>
             </div>
           </div>
         </div>
