@@ -12,7 +12,7 @@ const page = () => {
   // map card component here
   const card = [
     {
-      title: "class 4 Mathematics",
+      title: "Class 4 Mathematics",
       image: "/image 2.png",
       status: "Active",
       statusColor: "linear-gradient(270deg, #CEFA7D 0%, #A0E99A 100%)",
@@ -20,7 +20,7 @@ const page = () => {
       button2: "Buy Now",
     },
     {
-      title: "class 4 Mathematics",
+      title: "Class 5 Mathematics",
       image: "/image 2.png",
       status: "Active",
       statusColor: "linear-gradient(270deg, #CEFA7D 0%, #A0E99A 100%)",
@@ -28,7 +28,7 @@ const page = () => {
       button2: "Buy Now",
     },
     {
-      title: "class 4 Mathematics",
+      title: "class 6 Mathematics",
       image: "/image 2.png",
       status: "Active",
       statusColor: "linear-gradient(270deg, #CEFA7D 0%, #A0E99A 100%)",
@@ -36,7 +36,7 @@ const page = () => {
       button2: "Buy Now",
     },
     {
-      title: "class 4 Mathematics",
+      title: "class 8 Mathematics",
       image: "/image 2.png",
       status: "Active",
       statusColor: "linear-gradient(270deg, #CEFA7D 0%, #A0E99A 100%)",
@@ -47,7 +47,6 @@ const page = () => {
   return (
     <div className="flex">
       <Sidebar />
-
       {/* Dashboard right */}
       <div className="flex flex-col w-full bg-[#EFF3FD] px-5">
         {/* navbar */}

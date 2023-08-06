@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import TimerTwoToneIcon from '@mui/icons-material/TimerTwoTone';
 import Question from './question';
+import { Paper } from '@mui/material';
 
 const page = () => {
     const [bookmarkcolor, setBookmarkcolor] = useState(false);
@@ -31,7 +32,7 @@ const page = () => {
     return (
         <div className='flex flex-col h-[100vh]'>
             <div className='flex justify-between items-center py-3'>
-                <div className='flex gap-2 px-[10rem]'>
+                <div className='flex gap-2 px-[5rem]'>
                     <Image src={'/logo.png'} alt='logo' width={'30'} height={'22'} />
                     <div >
                         <span className='text-[22px] font-semibold font-poppins text-[#2F3192] '>Study</span>
@@ -46,33 +47,44 @@ const page = () => {
             <hr className='w-full bg-[#E0E0E0]' />
             <div className='flex h-[91vh] '>
                 <div className='flex flex-col w-[85%] gap-14 px-3'>
-                    <div className='flex justify-between items-center'>
+                    <Paper elevation={5} className='flex justify-between items-center shadow-md p-3 rounded-md mt-2'>
                         <div className='flex gap-4 h-max items-center'>
-                            <span className='text-[22px] font-poppins font-semibold text-[#2F3192]'>Section 1</span>
-                            <hr className='w-[2px] h-[60px] bg-[#E0E0E0]' />
-                            <span className='text-[22px] font-poppins font-semibold text-[#2F3192]'>Section 2</span>
-                            <hr className='w-[2px] bg-[#E0E0E0] h-[60px]' />
-                            <span className='text-[22px] font-poppins font-semibold text-[#2F3192]'>Section 3</span>
-                            <hr className='w-[2px] bg-[#E0E0E0] h-[60px]' />
-                            <span className='text-[22px] font-poppins font-semibold text-[#2F3192]'>Section 4</span>
+                            <div className='flex gap-1 cursor-pointer'>
+                                <span className='font-poppins font-[500] text-[#000]'>Mathematics</span>
+                                <span className='font-poppins font-[500] text-[#000]'>({data.length})</span>
+                            </div>
+                            <div className='flex gap-1 cursor-pointer'>
+                                <span className='font-poppins font-[500] text-[#000]'>Logical</span>
+                                <span className='font-poppins font-[500] text-[#000]'>({data.length})</span>
+                            </div>
+                            <div className='flex gap-1 cursor-pointer'>
+                                <span className='font-poppins font-[500] text-[#000]'>English</span>
+                                <span className='font-poppins font-[500] text-[#000]'>({data.length})</span>
+                            </div>
+                            <div className='flex gap-1 cursor-pointer'>
+                                <span className='font-poppins font-[500] text-[#000]'>Science</span>
+                                <span className='font-poppins font-[500] text-[#000]'>({data.length})</span>
+                            </div>
                         </div>
-                        <div className='text-[30px] text-[#000] font-[500]'>Class 5</div>
-                    </div>
+                        <div className='text-[20px] text-[#000] font-[500]'>Class 5</div>
+                    </Paper>
                     <div className='flex pl-[4rem] flex-col gap-5 justify-between h-[90vh]'>
                         <Question data={data} count={count} setCount={setCount} setData={setData} bookid={bookid} setBookid={setBookid} setBookmarkcolor={setBookmarkcolor} id={id} setId={setId} bookmarkcolor={bookmarkcolor} ansmark={ansmark} setAnsmark={setAnsmark} ansid={ansid} setAnsid={setAnsid} />
                         <div className='flex justify-between'>
                             <button disabled={id === 1} className={`${id === 1 ? "cursor-not-allowed" : "cursor-pointer"} bg-[#83FFC9] bg-opacity-20 p-3 rounded-lg text-[#00693B] text-[16px] font-[500] font-poppins px-3`} onClick={() => setId(p => p - 1)}>Previous</button>
-                            {id === data.length ? <button className='bg-[#00693B] p-2 rounded-lg text-[#FFF] text-[16px] font-[500] font-poppins px-3 w-[92px]' onClick={()=>alert("Submitted...")}>Submit</button> : <button className='bg-[#00693B] p-2 rounded-lg text-[#FFF] text-[16px] font-[500] font-poppins px-3 w-[92px]' onClick={() =>{if(!count.answered.includes(id)){
-                                count.skipped.push(id)
-                                setCount({...count})
-                            } ;setId(p => p + 1)}}>Next</button>}
+                            {id === data.length ? <button className='bg-[#00693B] p-2 rounded-lg text-[#FFF] text-[16px] font-[500] font-poppins px-3 w-[92px]' onClick={() => alert("Submitted...")}>Submit</button> : <button className='bg-[#00693B] p-2 rounded-lg text-[#FFF] text-[16px] font-[500] font-poppins px-3 w-[92px]' onClick={() => {
+                                if (!count.answered.includes(id)) {
+                                    count.skipped.push(id)
+                                    setCount({ ...count })
+                                }; setId(p => p + 1)
+                            }}>Next</button>}
                         </div>
                     </div>
                 </div>
                 <div className='bg-[#F8F8F8] w-[15%] flex flex-col justify-between'>
                     <div className='p-3 flex flex-wrap gap-3 max-w-[230px]'>
                         {data.map((value, i) => (
-                            <span onClick={() => setId(value.id)} className='min-w-[42px] h-[42px] text-[#FFF] text-[20px] font-poppins font-semibold flex items-center justify-center cursor-pointer rounded-md' style={{backgroundColor: count.bookmarked.includes(value.id) ? "#FFD600" : count.answered.includes(value.id) ? "#00693B" : count.skipped.includes(value.id)? "#EE0000":"#D2D2D2"}} key={i}>{i + 1}</span>
+                            <span onClick={() => setId(value.id)} className='min-w-[42px] h-[42px] text-[#FFF] text-[20px] font-poppins font-semibold flex items-center justify-center cursor-pointer rounded-md' style={{ backgroundColor: count.bookmarked.includes(value.id) ? "#FFD600" : count.answered.includes(value.id) ? "#00693B" : count.skipped.includes(value.id) ? "#EE0000" : "#D2D2D2" }} key={i}>{i + 1}</span>
                         ))}
                     </div>
                     <div>
