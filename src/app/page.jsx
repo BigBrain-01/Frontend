@@ -8,6 +8,7 @@ import Image from 'next/image'
 import Footer from '../components/Footer/Footer'
 import Featuredvideos from '@/components/Landing/Featuredvideos'
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
   
@@ -72,7 +73,6 @@ export default function Home() {
   const session = useSession()
   const [showans, setShowans] = useState(false)
   const [quesid, setQuesid] = useState(null)
-  
   return (
     // main div
     <div className="flex flex-col gap-[5rem]">
