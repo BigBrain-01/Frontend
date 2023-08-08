@@ -41,95 +41,66 @@ const page = () => {
   ];
   return (
     <div className="flex">
-      <Sidebar />
       {/* Dashboard right */}
-      <div className="flex flex-col w-full bg-[#EFF3FD] px-5">
-        {/* navbar */}
-        <div className="flex px-5 py-5 gap-5 bg-[#EFF3FD]  items-center justify-between w-full h-14">
-          <div className="flex gap-5 items-center">
-            <div className="flex flex-col text-xs">
-              <div className="text-lg font-semibold truncate w-[194px]">
-                Welcome Darpan Bahadur
+            <div className="flex flex-col">
+              {/* courses tab */}
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 4 & 5</div>
+                <div className="mt-5 flex justify-between relative">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
+
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
               </div>
-              {moment().format("hh:mm a DD MMM YYYY")}
-            </div>
-
-            <div className="flex  px-2  bg-white w-[627px] items-center rounded-md gap-3 h-[48px] ">
-              <SearchIcon sx={{width:"24px",height:'24px',color:"#AEB6CF",}}/>
-              <input
-                className="rounded-md w-full h-8 outline-none "
-                type="Search"
-                placeholder="Search"
-              />
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 6 & 8</div>
+                <div className="mt-5 flex justify-between relative">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-6-and-8'}>See More</Link>
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 9 & 10</div>
+                <div className="mt-5 flex justify-between relative">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-9-and-10'}>See More</Link>
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-5 ">
-            <div className="bg-white  cursor-pointer p-3 rounded-md">
-              <Image src="/bell.svg" alt="" width={24} height={24} />
-            </div>
-            <div className="truncate">Darpan Bahadur</div>
-            <div className="cursor-pointer">
-              <Image src="/profile pic.png" alt="" width={48} height={48}  className="rounded-full"/>
-            </div>
-    <div className="flex flex-col">
-      {/* courses tab */}
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 4 & 5</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
-
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 6 & 8</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-6-and-8'}>See More</Link>
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 9 & 10</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-9-and-10'}>See More</Link>
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
+  )
+}
 export default page;
