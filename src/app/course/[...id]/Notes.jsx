@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '@mui/material';
-
 const Notes = () => {
     const data = [
         { id: 1, name: 'Notes1.pdf', createdAt: 'July 29,2023',fileUrl:'/file.pdf' },
