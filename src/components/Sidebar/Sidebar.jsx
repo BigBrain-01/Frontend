@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const Sidebar = () => {
   return (
-    <div className="w-[20%] max-h-[100vh] flex flex-col px-8 py-2.5 gap-12 sticky left-0 top-0">
+    <div className="w-[20%] h-screen bg-white  flex flex-col px-8 py-2.5 gap-12 sticky left-0 top-0">
       <div className="flex  items-center font-semibold text-xl">
         <Image src="/logo.png" alt="" width={30} height={50} />
         <h1><span className="text-[#2F3192]">Study</span>Titans</h1>
@@ -32,7 +32,7 @@ const Sidebar = () => {
           <Image src="/billing.svg" alt="" quality={100} width={20} height={24} />
           <h1>Billing</h1>
         </div>
-        <Link href={'../../app/profile'}>
+        <Link href={'/profile'}>
           <div className="flex gap-2 items-center">
             <Image src="/settings.svg" alt="" quality={100} width={20} height={24} />
             <h1>Settings</h1>

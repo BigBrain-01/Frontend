@@ -9,9 +9,12 @@ import Footer from '../components/Footer/Footer'
 import Featuredvideos from '@/components/Landing/Featuredvideos'
 import { useState } from 'react'
 import axios from 'axios'
+import { Banner1, Banner2 ,Banner3 } from '../components/Banner/Banner'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 
 export default function Home() {
-  
+
   const plan = [
     {
       id: 1,
@@ -70,70 +73,35 @@ export default function Home() {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also",
     },
   ]
+  const banners = [
+    { id: 0, banner: <Banner1 /> },
+    { id: 1, banner: <Banner2 /> },
+    { id: 1, banner: <Banner3 /> },
+  ]
   const session = useSession()
   const [showans, setShowans] = useState(false)
   const [quesid, setQuesid] = useState(null)
+  const [current, setCurrent] = useState(0);
   return (
     // main div
-    <div className="flex flex-col gap-[5rem]">
+    <div className="flex flex-col gap-[9rem]">
       <div className='h-[100vh] flex flex-col'>
         <Navbar />
-        <div className="bg-[#FAF8F4] h-[100vh] flex justify-between px-32 items-center">
-          <div className="max-w-[580px] flex flex-col gap-4">
-            <h1 className="text-[60px] font-extrabold leading-normal">
-              Getting Best Quality Education Is Now More{' '}
-              <span className="relative text-[#2F3192]">
-                Easier
-                <Image
-                  className="absolute right-0 -bottom-6"
-                  src={'/underline.png'}
-                  alt=""
-                  width={236}
-                  height={44}
-                />
-              </span>
-            </h1>
-            <p className="w-[420px] text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio
-              in et, lectus sit lorem id integer.
-            </p>
-            <button className="bg-[#00693B] rounded-md text-white w-max text-sm font-normal py-[10px] px-8">
-              Get Started
-            </button>
+        <div className='w-full overflow-hidden relative'>
+          <div className='bg-[#FFF] px-3 py-5 rounded-md absolute left-0 z-10 top-1/2 cursor-pointer' onClick={() => setCurrent(current - 1)}>
+            <KeyboardArrowLeftIcon sx={{ width: '40px', height: '40px' }} />
           </div>
-          <div className="relative w-[500px] h-full bg-[url('/julia.png')] bg-cover bg-center bg-no-repeat">
-            <Image
-              src={'/dancingBook.png'}
-              alt=""
-              width={'90'}
-              quality={100}
-              className="absolute top-20 left-40"
-              height={'120'}
-            />
-            <Image
-              src={'/u.png'}
-              alt=""
-              width={'80'}
-              quality={100}
-              className="absolute top-20 -right-10"
-              height={'120'}
-            />
-            <Image
-              src={'/greenArrow.png'}
-              alt=""
-              width={'80'}
-              quality={100}
-              className="absolute bottom-20 -right-20"
-              height={'120'}
-            />
-            <Image
-              src={'/graph.png'}
-              alt=""
-              width={'80'}
-              quality={100}
-              className="absolute bottom-28 left-28"
-              height={'120'}
-            />
+          <div className='bg-[#FFF] px-3 py-5 rounded-md absolute right-0 z-10 top-1/2 cursor-pointer' onClick={() => setCurrent(current + 1)}>
+            <KeyboardArrowRightIcon sx={{ width: '40px', height: '40px' }} />
+          </div>
+          <div className=' w-full transition duration-[1000] ease h-screen ' style={{ transform: `translate3d(${-current * 100}%, 0, 0)` }}>
+            {
+              banners.map((value, i) => (
+                <div className='inline-block w-full '>
+                  {value.banner}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -278,7 +246,7 @@ export default function Home() {
       </div>
       {/* Featured Videos */}
       <div>
-        <Featuredvideos/>
+        <Featuredvideos />
       </div>
       {/* achievements */}
       <div className="flex flex-col">

@@ -113,7 +113,7 @@ const Reviews = () => {
                     </div>
                 </div>
                 <div onClick={() => setOpendialog(true)}>
-                    <Button variant='contained' type='none' sx={{ padding: '10px 25px', textTransform: 'capitalize', fontSize: '16px' }} >Post Review</Button>
+                    <Button variant='contained' type='none' sx={{ padding: '10px 25px', textTransform: 'capitalize', fontSize: '16px',backgroundColor:"#00693B","&:hover":{backgroundColor:"#00693B"} }} >Post Review</Button>
                 </div>
             </div>
             {reviews.map((value, i) => (
@@ -157,7 +157,6 @@ const Reviews = () => {
                             <Rating
                                 name="hover-feedback"
                                 value={value}
-                                precision={0.5}
                                 onChange={(event, newValue) => {
                                     setValue(newValue);
                                 }}
