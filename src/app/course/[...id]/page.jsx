@@ -2,13 +2,15 @@
 import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import SearchIcon from '@mui/icons-material/Search';
-import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Image from 'next/image';
 import Notes from './Notes';
 import Assignment from './Assignments'
 import Practice from './Practice';
 import VideoPlayer from '@/components/coursevideo/VideoPlayer';
 import Reviews from '@/components/coursevideo/Reviews';
+import { Button } from '@mui/material';
+import Link from 'next/link';
 
 const page = () => {
   const [shownotes, setShownotes] = useState(false);
@@ -27,7 +29,7 @@ const page = () => {
             </div>
             <div className='flex gap-5'>
               <div className='w-[48px] h-[48px] bg-[#FFF] items-center flex justify-center rounded-md'>
-                <NotificationsOutlinedIcon sx={{ width: "24px", height: '24px' }} />
+                <ShoppingCartIcon sx={{ width: "24px", height: '24px', cursor: 'pointer' }} />
               </div>
               <div className='flex h-[48px] items-center gap-1 w-[140px] justify-between'>
                 <span className='max-w-[90px] text-[16px] text-[#00261C] font-poppins font-[500] leading-[24px] '>Darpan Bahadur</span>
@@ -38,11 +40,20 @@ const page = () => {
           <div className='flex items-center h-[max]'>
             <VideoPlayer src={'/video1.mp4'} />
           </div>
-          <div className='flex gap-9 pb-5 text-[20px] text-[#000] font-semibold font-poppins leading-[23px]'>
-            <span className='cursor-pointer' style={{ textDecoration: shownotes ? "underline" : "" }} onClick={() => { setShownotes(!shownotes); setShowassign(false); setShowques(false); setShowreviews(false) }}>Notes</span>
-            <span className='cursor-pointer' onClick={() => { setShowassign(!showassign); setShownotes(false); setShowques(false); setShowreviews(false) }} style={{ textDecoration: showassign ? "underline" : "" }} >Assignments</span>
-            <span className='cursor-pointer' onClick={() => { setShowques(!showques); setShowassign(false); setShownotes(false); setShowreviews(false) }} style={{ textDecoration: showques ? "underline" : "" }} >Practice questions</span>
-            <span className='cursor-pointer' onClick={() => { setShowreviews(true); setShowassign(false); setShownotes(false); setShowques(false) }} style={{ textDecoration: showreviews ? "underline" : "" }} >Reviews</span>
+          <div className='flex justify-between pb-5'>
+            <div className='flex gap-9 text-[20px] text-[#000] font-semibold font-poppins leading-[23px]'>
+              <span className='cursor-pointer' style={{ textDecoration: shownotes ? "underline" : "" }} onClick={() => { setShownotes(!shownotes); setShowassign(false); setShowques(false); setShowreviews(false) }}>Notes</span>
+              <span className='cursor-pointer' onClick={() => { setShowassign(!showassign); setShownotes(false); setShowques(false); setShowreviews(false) }} style={{ textDecoration: showassign ? "underline" : "" }} >Assignments</span>
+              <span className='cursor-pointer' onClick={() => { setShowques(!showques); setShowassign(false); setShownotes(false); setShowreviews(false) }} style={{ textDecoration: showques ? "underline" : "" }} >Practice questions</span>
+              <span className='cursor-pointer' onClick={() => { setShowreviews(true); setShowassign(false); setShownotes(false); setShowques(false) }} style={{ textDecoration: showreviews ? "underline" : "" }} >Reviews</span>
+            </div>
+            <div className='flex gap-3'>
+              <Link href="/cart">
+                <Button variant='contained' type='none' sx={{ backgroundColor: "#00693B", padding: '6px 12px 6px 12px', textTransform: "capitalize", "&:hover": { backgroundColor: "#00693B" } }}>Add to cart</Button>
+              </Link>
+              <Button variant='contained' type='none' sx={{ backgroundColor: "#83FFC9", color: '#00693B', padding: '6px 12px 6px 12px', textTransform: "capitalize", "&:hover": { backgroundColor: "#83FFC9" } }}>Buy Now</Button>
+            </div>
+
           </div>
         </div>
         {shownotes &&

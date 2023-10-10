@@ -46,7 +46,7 @@ const page = () => {
               {/* courses tab */}
               <div className="flex flex-col mt-8  px-5 ">
                 <div className="font-semibold">Classroom for 4 & 5</div>
-                <div className="mt-5 flex justify-between relative">
+                <div className="mt-5 flex justify-between relative gap-5">
                   <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
                     <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
 
