@@ -40,64 +40,67 @@ const page = () => {
     },
   ];
   return (
-    <div className="flex flex-col">
-      {/* courses tab */}
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 4 & 5</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 6 & 8</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-6-and-8'}>See More</Link>
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col mt-8  px-5 ">
-        <div className="font-semibold">Classroom for 9 & 10</div>
-        <div className="mt-5 flex justify-between relative">
-          <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
-            <Link href={'/dashboard/classroom-for-9-and-10'}>See More</Link>
-          </div>
-          {card.map((item) => (
-            <Card
-              title={item.title}
-              image={item.image}
-              status={item.status}
-              statusColor={item.statusColor}
-              button1={item.button1}
-              button2={item.button2}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+    <div className="flex">
+      {/* Dashboard right */}
+            <div className="flex flex-col">
+              {/* courses tab */}
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 4 & 5</div>
+                <div className="mt-5 flex justify-between relative gap-5">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-4-and-5'}>See More</Link>
 
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 6 & 8</div>
+                <div className="mt-5 flex justify-between relative">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-6-and-8'}>See More</Link>
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col mt-8  px-5 ">
+                <div className="font-semibold">Classroom for 9 & 10</div>
+                <div className="mt-5 flex justify-between relative">
+                  <div className="absolute right-0 bg-gradient-to-l from-black w-max px-2 h-full flex items-center text-white">
+                    <Link href={'/dashboard/classroom-for-9-and-10'}>See More</Link>
+                  </div>
+                  {card.map((item) => (
+                    <Card
+                      title={item.title}
+                      image={item.image}
+                      status={item.status}
+                      statusColor={item.statusColor}
+                      button1={item.button1}
+                      button2={item.button2}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+  )
+}
 export default page;

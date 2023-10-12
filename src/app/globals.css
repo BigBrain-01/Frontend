@@ -16,7 +16,7 @@ video::-webkit-media-controls{
 html {
     scroll-behavior: smooth !important;
 }
+.css-a643pv-MuiStack-root {
+    padding-top: 0px !important;
+}
 
-.css-rvny9u-MuiButtonBase-root-MuiButton-root{
-    background-color: #00693B;
-};
