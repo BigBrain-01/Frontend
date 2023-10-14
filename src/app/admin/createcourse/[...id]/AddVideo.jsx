@@ -27,7 +27,10 @@ const AddVideo = ({ id }) => {
     const [formData, setFormData] = useState({
         title: "",
         videoURL: "",
-        thumbnail: ""
+        thumbnail: "",
+        notes:[],
+        assignment:[],
+        practiceQuestions:[]
     })
     const imageRef = useRef()
     const videoRef = useRef()
