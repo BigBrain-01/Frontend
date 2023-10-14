@@ -7,15 +7,12 @@ export function middleware(request){
     const isPublicPath = pathname === '/login' || pathname === '/register' || pathname === '/'
 
     const token = request.cookies.get('token')?.value || ''
-
-    console.log(token)
-
     const url = request.nextUrl
 
-    if(!token && !isPublicPath){
-        url.pathname = '/login'
-        return NextResponse.redirect(url)
-    }
+    // if(!token && !isPublicPath){
+    //     url.pathname = '/login'
+    //     return NextResponse.redirect(url) 
+    // }
 }
 
 export const config = {

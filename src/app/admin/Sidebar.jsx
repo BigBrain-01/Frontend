@@ -9,7 +9,7 @@ const Sidebar = () => {
     const [openchallenge, setOpenchallenge] = useState(false)
     const [opencourse, setOpencourse] = useState(false)
     return (
-        <div className='bg-[#171717] h-screen w-[15%] flex flex-col gap-[1px] sticky top-0 left-0'>
+        <div className='bg-[#171717] h-screen w-[250px] flex flex-col gap-[1px] sticky top-0 left-0'>
             <div className='bg-[#262626] p-3'>
                 <div className='flex justify-between '>
                     <div className='flex gap-2 items-center'>
